@@ -2,6 +2,7 @@ var editor = document.getElementById("editor")
 
 function columnWidth(rows, columnIndex) {
   return Math.max.apply(null, rows.map(function(row) {
+    if(row[columnIndex] === undefined) return 0
     return row[columnIndex].length
   }))
 }
